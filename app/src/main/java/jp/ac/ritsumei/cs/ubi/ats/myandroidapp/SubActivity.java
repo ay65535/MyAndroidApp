@@ -7,26 +7,26 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.TextView;
 
 
-public class MainActivity extends Activity {
-
-    private EditText edit = null;
+public class SubActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_sub);
 
-        edit = (EditText)findViewById(R.id.editText);
-        Button button1 = (Button)findViewById(R.id.button1);
-        button1.setOnClickListener(new View.OnClickListener() {
+        TextView text = (TextView)findViewById(R.id.textView);
+        Intent intent = getIntent();
+        String data = intent.getStringExtra("keyword");
+        text.setText(data);
+
+        Button button2 = (Button)findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, SubActivity.class);
-                intent.putExtra("keyword", edit.getText().toString());
-                startActivity(intent);
+                finish();
             }
         });
     }
@@ -35,7 +35,7 @@ public class MainActivity extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.sub, menu);
         return true;
     }
 

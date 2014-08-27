@@ -4,5 +4,10 @@
     <string name="app_name">MyAndroidApp</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_sub">SubActivity</string>
+    <string name="button_goback">Go Back</string>
+    <string name="button_gotosub">Goto Sub</string>
+    <string name="edittext">テキストを入力してください。</string>
+    <string name="outputText">Large Text</string>
 
 </resources>
